@@ -10,11 +10,16 @@
 
 \begin{document}
 
+
 \maketitle
 \newpage
 \pdfbookmark[section]{\contentsname}{toc}
+\renewcommand*\contentsname{Spis treści}
+\renewcommand{\figurename}{Schemat}
 \tableofcontents
 \pagebreak
 
+\setcounter{chapter}{1}
+\chapter*{I}
 
 \end{document}
