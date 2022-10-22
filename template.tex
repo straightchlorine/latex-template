@@ -1,4 +1,7 @@
-\documentclass{report}
+\documentclass[12pt, chapterprefix=true]{report}
+
+\usepackage[polish]{babel}
+\addto\captionspolish{\renewcommand{\chaptername}{Sekcja}}
 
 \input{preamble}
 \input{macros}
@@ -6,20 +9,19 @@
 
 \title{\Huge{Some Class}}
 \author{\huge{ Piotr Krzysztof Lis}}
-\date{}
+\date{\today}
 
 \begin{document}
-
 
 \maketitle
 \newpage
 \pdfbookmark[section]{\contentsname}{toc}
-\renewcommand*\contentsname{Spis treści}
-\renewcommand{\figurename}{Schemat}
-\tableofcontents
-\pagebreak
 
-\setcounter{chapter}{1}
-\chapter*{I}
+\renewcommand*\contentsname{Spis treści}
+\renewcommand{\figurename}{Ryc.}
+\tableofcontents
+
+\pagebreak
+\chapter{Sekcja}
 
 \end{document}
