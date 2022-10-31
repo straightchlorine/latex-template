@@ -1,0 +1,27 @@
+\documentclass[12pt, chapterprefix=true]{report}
+
+\usepackage[polish]{babel}
+\addto\captionspolish{\renewcommand{\chaptername}{Sekcja}}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Some Class}}
+\author{\huge{ Piotr Krzysztof Lis}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\pdfbookmark[section]{\contentsname}{toc}
+
+\renewcommand*\contentsname{Spis treści}
+\renewcommand{\figurename}{Ryc.}
+\tableofcontents
+
+\pagebreak
+\chapter{Sekcja}
+
+\end{document}
