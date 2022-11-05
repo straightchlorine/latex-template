@@ -2,6 +2,12 @@
 % imports %
 %%%%%%%%%%%
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{cmbright}
+
+\usepackage[polish]{babel}
+
 \usepackage[tmargin=2cm,rmargin=1in,lmargin=1in,margin=0.85in,bmargin=2cm,footskip=.2in]{geometry}
 \usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
 \usepackage[varbb]{newpxmath}
@@ -31,14 +37,11 @@
 \usepackage{xifthen}
 \usepackage{pdfpages}
 \usepackage{transparent}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 
 %tikzpicture
 \usepackage{tikz}
 \usepackage{scalerel}
 \usepackage{pict2e}
-\usepackage{tkz-euclide}
 \usetikzlibrary{calc}
 \usetikzlibrary{patterns,arrows.meta}
 \usetikzlibrary{shadows}
@@ -50,6 +53,10 @@
 \usepgfplotslibrary{statistics}
 \usepgfplotslibrary{fillbetween}
 
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand*\contentsname{Spis treści}
+\renewcommand{\figurename}{Ryc.}
+\addto\captionspolish{\renewcommand{\chaptername}{Rozdział}}
 
 \definecolor{myg}{RGB}{56, 140, 70}
 \definecolor{myb}{RGB}{45, 111, 177}

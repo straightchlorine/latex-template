@@ -1,13 +1,13 @@
-\documentclass[12pt, chapterprefix=true]{report}
+\documentclass[polish,a4paper,12pt, chapterprefix=true]{report}
 
 \usepackage[polish]{babel}
-\addto\captionspolish{\renewcommand{\chaptername}{Sekcja}}
+\addto\captionspolish{\renewcommand{\chaptername}{Część}}
 
 \input{preamble}
 \input{macros}
 \input{letterfonts}
 
-\title{\Huge{Some Class}}
+\title{\Huge{\textbf{Some Class}}}
 \author{\huge{ Piotr Krzysztof Lis}}
 \date{\today}
 
@@ -17,11 +17,9 @@
 \newpage
 \pdfbookmark[section]{\contentsname}{toc}
 
-\renewcommand*\contentsname{Spis treści}
-\renewcommand{\figurename}{Ryc.}
 \tableofcontents
 
 \pagebreak
-\chapter{Sekcja}
+\chapter{}
 
 \end{document}
