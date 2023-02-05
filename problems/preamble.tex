@@ -82,7 +82,13 @@
 {problem}
 
 % command
-\newcommand{\problem}[2]{\begin{Problem}{#1}{}#2\end{Problem}}%
+\newcommand{\problem}[2]
+{%
+  \newpage
+  \begin{Problem}{#1}{}
+    #2
+  \end{Problem}
+}%
 
 
 
