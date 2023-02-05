@@ -1,40 +1,26 @@
-%%%%%%%%%%%
-% imports %
-%%%%%%%%%%%
+% general imports %
+\usepackage{xifthen}
+\usepackage{tcolorbox}
+\usepackage{theoremref}
+\usepackage{enumitem}
+\usepackage{bookmark}
+\usepackage{comment}
+\usepackage{xcolor}
+\usepackage{transparent}
+\usepackage{varwidth}
+\usepackage{multicol}
+\usepackage{import}
+\usepackage{pdfpages}
 
-\usepackage[tmargin=2cm,rmargin=1in,lmargin=1in,margin=0.85in,bmargin=2cm,footskip=.2in]{geometry}
+% math imports
 \usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
 \usepackage[varbb]{newpxmath}
-\usepackage{xfrac}
 \usepackage[makeroom]{cancel}
-\usepackage{mathtools}
-\usepackage{bookmark}
-\usepackage{enumitem}
-\usepackage{hyperref,theoremref}
-\hypersetup{
-	pdftitle={Assignment},
-	colorlinks=true, linkcolor=doc!90,
-	bookmarksnumbered=true,
-	bookmarksopen=true
-}
-\usepackage[most,many,breakable]{tcolorbox}
-\usepackage{xcolor}
-\usepackage{varwidth}
-\usepackage{varwidth}
-\usepackage{etoolbox}
-\usepackage{nameref}
-\usepackage{multicol,array}
-\usepackage{tikz-cd}
-\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
-\usepackage{comment} % enables the use of multi-line comments (\ifx \fi)
-\usepackage{import}
-\usepackage{xifthen}
-\usepackage{pdfpages}
-\usepackage{transparent}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage{xfrac}
+\usepackage{array}
 
-%tikzpicture
+% tikz imports
+\usepackage{tikz-cd}
 \usepackage{tikz}
 \usepackage{scalerel}
 \usepackage{pict2e}
@@ -44,11 +30,98 @@
 \usetikzlibrary{shadows}
 \usetikzlibrary{external}
 
-%pgfplots
+% cs imports
+\usepackage[algoruled,linesnumbered,titlenumbered]{algorithm2e}
+
+% pgfplots
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{statistics}
 \usepgfplotslibrary{fillbetween}
+
+\usepackage{hyperref}
+\hypersetup{%
+  pdftitle={Assignment},
+  colorlinks=true, linkcolor=doc!90,
+  bookmarksnumbered=true,
+  bookmarksopen=true
+}
+
+% language
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% predefined sections
+\tcbuselibrary{theorems, breakable, skins}
+
+% ~~~
+% problem box
+% ~~~
+
+% colors
+\definecolor{problembg}{HTML}{dee2e6}
+\definecolor{problemframe}{HTML}{212529}
+\definecolor{problemdef}{HTML}{212529}
+
+\newtcbtheorem[number within=section]{Problem}{Zadanie}
+{%
+  enhanced,
+  breakable,
+  oversize,
+  colback = problembg,
+  colframe = problemframe,
+  coltitle = problemdef,
+  sharp corners,
+  detach title,
+  before upper=\tcbtitle\quad,
+  fonttitle = \bfseries\sffamily,
+  description font = \mdseries,
+  separator sign none,
+}
+{problem}
+
+\newcommand{\problem}[2]{\begin{Problem}{#1}{}#2\end{Problem}}%
+
+
+\newtcbtheorem[number within=section]{Exercise}{Exercise}
+{%
+	enhanced,
+	breakable,
+	colback = myexercisebg,
+	frame hidden,
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{myexercisefg},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	coltitle = myexercisefg,
+	fonttitle = \bfseries\sffamily,
+	description font = \mdseries,
+	separator sign none,
+	segmentation style={solid, myexercisefg},
+}
+{th}
+
+\tcbuselibrary{theorems,skins,hooks}
+\newtcbtheorem[number within=chapter]{exercise}{Exercise}
+{%
+	enhanced,
+	breakable,
+	colback = myexercisebg,
+	frame hidden,
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{myexercisefg},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	coltitle = myexercisefg,
+	fonttitle = \bfseries\sffamily,
+	description font = \mdseries,
+	separator sign none,
+	segmentation style={solid, myexercisefg},
+}
+{th}
 
 
 \definecolor{myg}{RGB}{56, 140, 70}
@@ -60,9 +133,6 @@
 \definecolor{mylenmafr}{HTML}{983b0f}
 \definecolor{mypropbg}{HTML}{f2fbfc}
 \definecolor{mypropfr}{HTML}{191971}
-\definecolor{myexamplebg}{HTML}{F2FBF8}
-\definecolor{myexamplefr}{HTML}{88D6D1}
-\definecolor{myexampleti}{HTML}{2A7F7F}
 \definecolor{mydefinitbg}{HTML}{E5E5FF}
 \definecolor{mydefinitfr}{HTML}{3F3FA3}
 \definecolor{notesgreen}{RGB}{0,162,0}
@@ -302,82 +372,6 @@
 %================================
 
 \tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=section]{Exercise}{Exercise}
-{%
-	enhanced,
-	breakable,
-	colback = myexercisebg,
-	frame hidden,
-	boxrule = 0sp,
-	borderline west = {2pt}{0pt}{myexercisefg},
-	sharp corners,
-	detach title,
-	before upper = \tcbtitle\par\smallskip,
-	coltitle = myexercisefg,
-	fonttitle = \bfseries\sffamily,
-	description font = \mdseries,
-	separator sign none,
-	segmentation style={solid, myexercisefg},
-}
-{th}
-
-\tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=chapter]{exercise}{Exercise}
-{%
-	enhanced,
-	breakable,
-	colback = myexercisebg,
-	frame hidden,
-	boxrule = 0sp,
-	borderline west = {2pt}{0pt}{myexercisefg},
-	sharp corners,
-	detach title,
-	before upper = \tcbtitle\par\smallskip,
-	coltitle = myexercisefg,
-	fonttitle = \bfseries\sffamily,
-	description font = \mdseries,
-	separator sign none,
-	segmentation style={solid, myexercisefg},
-}
-{th}
-
-%================================
-% EXAMPLE BOX
-%================================
-
-\newtcbtheorem[number within=section]{Example}{Example}
-{%
-	colback = myexamplebg
-	,breakable
-	,colframe = myexamplefr
-	,coltitle = myexampleti
-	,boxrule = 1pt
-	,sharp corners
-	,detach title
-	,before upper=\tcbtitle\par\smallskip
-	,fonttitle = \bfseries
-	,description font = \mdseries
-	,separator sign none
-	,description delimiters parenthesis
-}
-{ex}
-
-\newtcbtheorem[number within=chapter]{example}{Example}
-{%
-	colback = myexamplebg
-	,breakable
-	,colframe = myexamplefr
-	,coltitle = myexampleti
-	,boxrule = 1pt
-	,sharp corners
-	,detach title
-	,before upper=\tcbtitle\par\smallskip
-	,fonttitle = \bfseries
-	,description font = \mdseries
-	,separator sign none
-	,description delimiters parenthesis
-}
-{ex}
 
 %================================
 % DEFINITION BOX
@@ -588,7 +582,6 @@
 \newcommand{\clm}[3]{\begin{claim}{#1}{#2}#3\end{claim}}
 \newcommand{\wc}[2]{\begin{wconc}{#1}{}\setlength{\parindent}{1cm}#2\end{wconc}}
 \newcommand{\thmcon}[1]{\begin{Theoremcon}{#1}\end{Theoremcon}}
-\newcommand{\ex}[2]{\begin{Example}{#1}{}#2\end{Example}}
 \newcommand{\dfn}[2]{\begin{Definition}[colbacktitle=red!75!black]{#1}{}#2\end{Definition}}
 \newcommand{\dfnc}[2]{\begin{definition}[colbacktitle=red!75!black]{#1}{}#2\end{definition}}
 \newcommand{\qs}[2]{\begin{question}{#1}{}#2\end{question}}
@@ -770,5 +763,4 @@
 	\@starttoc{toc}}
 \makeatother
 
-=======
 \usepackage{tikzsymbols}
