@@ -53,7 +53,7 @@
 \usepackage[T1]{fontenc}
 
 % predefined sections
-\tcbuselibrary{theorems, breakable, skins}
+\tcbuselibrary{theorems, breakable, skins, hooks}
 
 % ~~~
 % problem box
@@ -81,47 +81,9 @@
 }
 {problem}
 
+% command
 \newcommand{\problem}[2]{\begin{Problem}{#1}{}#2\end{Problem}}%
 
-
-\newtcbtheorem[number within=section]{Exercise}{Exercise}
-{%
-	enhanced,
-	breakable,
-	colback = myexercisebg,
-	frame hidden,
-	boxrule = 0sp,
-	borderline west = {2pt}{0pt}{myexercisefg},
-	sharp corners,
-	detach title,
-	before upper = \tcbtitle\par\smallskip,
-	coltitle = myexercisefg,
-	fonttitle = \bfseries\sffamily,
-	description font = \mdseries,
-	separator sign none,
-	segmentation style={solid, myexercisefg},
-}
-{th}
-
-\tcbuselibrary{theorems,skins,hooks}
-\newtcbtheorem[number within=chapter]{exercise}{Exercise}
-{%
-	enhanced,
-	breakable,
-	colback = myexercisebg,
-	frame hidden,
-	boxrule = 0sp,
-	borderline west = {2pt}{0pt}{myexercisefg},
-	sharp corners,
-	detach title,
-	before upper = \tcbtitle\par\smallskip,
-	coltitle = myexercisefg,
-	fonttitle = \bfseries\sffamily,
-	description font = \mdseries,
-	separator sign none,
-	segmentation style={solid, myexercisefg},
-}
-{th}
 
 
 \definecolor{myg}{RGB}{56, 140, 70}
@@ -140,8 +102,6 @@
 \definecolor{mygr}{HTML}{2C3338}
 \definecolor{myred}{RGB}{127,0,0}
 \definecolor{myyellow}{RGB}{169,121,69}
-\definecolor{myexercisebg}{HTML}{F2FBF8}
-\definecolor{myexercisefg}{HTML}{88D6D1}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -420,93 +380,6 @@
 
 
 
-%================================
-% Solution BOX
-%================================
-
-\makeatletter
-\newtcbtheorem{question}{Question}{enhanced,
-	breakable,
-	colback=white,
-	colframe=myb!80!black,
-	attach boxed title to top left={yshift*=-\tcboxedtitleheight},
-	fonttitle=\bfseries,
-	title={#2},
-	boxed title size=title,
-	boxed title style={%
-			sharp corners,
-			rounded corners=northwest,
-			colback=tcbcolframe,
-			boxrule=0pt,
-		},
-	underlay boxed title={%
-			\path[fill=tcbcolframe] (title.south west)--(title.south east)
-			to[out=0, in=180] ([xshift=5mm]title.east)--
-			(title.center-|frame.east)
-			[rounded corners=\kvtcb@arc] |-
-			(frame.north) -| cycle;
-		},
-	#1
-}{def}
-\makeatother
-
-%================================
-% SOLUTION BOX
-%================================
-
-\makeatletter
-\newtcolorbox{solution}{enhanced,
-	breakable,
-	colback=white,
-	colframe=myg!80!black,
-	attach boxed title to top left={yshift*=-\tcboxedtitleheight},
-	title=Solution,
-	boxed title size=title,
-	boxed title style={%
-			sharp corners,
-			rounded corners=northwest,
-			colback=tcbcolframe,
-			boxrule=0pt,
-		},
-	underlay boxed title={%
-			\path[fill=tcbcolframe] (title.south west)--(title.south east)
-			to[out=0, in=180] ([xshift=5mm]title.east)--
-			(title.center-|frame.east)
-			[rounded corners=\kvtcb@arc] |-
-			(frame.north) -| cycle;
-		},
-}
-\makeatother
-
-%================================
-% Question BOX
-%================================
-
-\makeatletter
-\newtcbtheorem{qstion}{Question}{enhanced,
-	breakable,
-	colback=white,
-	colframe=mygr,
-	attach boxed title to top left={yshift*=-\tcboxedtitleheight},
-	fonttitle=\bfseries,
-	title={#2},
-	boxed title size=title,
-	boxed title style={%
-			sharp corners,
-			rounded corners=northwest,
-			colback=tcbcolframe,
-			boxrule=0pt,
-		},
-	underlay boxed title={%
-			\path[fill=tcbcolframe] (title.south west)--(title.south east)
-			to[out=0, in=180] ([xshift=5mm]title.east)--
-			(title.center-|frame.east)
-			[rounded corners=\kvtcb@arc] |-
-			(frame.north) -| cycle;
-		},
-	#1
-}{def}
-\makeatother
 
 \newtcbtheorem[number within=chapter]{wconc}{Wrong Concept}{
 	breakable,
@@ -584,7 +457,6 @@
 \newcommand{\thmcon}[1]{\begin{Theoremcon}{#1}\end{Theoremcon}}
 \newcommand{\dfn}[2]{\begin{Definition}[colbacktitle=red!75!black]{#1}{}#2\end{Definition}}
 \newcommand{\dfnc}[2]{\begin{definition}[colbacktitle=red!75!black]{#1}{}#2\end{definition}}
-\newcommand{\qs}[2]{\begin{question}{#1}{}#2\end{question}}
 \newcommand{\pf}[2]{\begin{myproof}[#1]#2\end{myproof}}
 \newcommand{\nt}[1]{\begin{note}#1\end{note}}
 

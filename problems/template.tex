@@ -1,27 +1,23 @@
-\documentclass[12pt, chapterprefix=true]{report}
-
-\usepackage[polish]{babel}
-\addto\captionspolish{\renewcommand{\chaptername}{Sekcja}}
+\documentclass{report}
 
 \input{preamble}
 \input{macros}
 \input{letterfonts}
 
-\title{\Huge{Przedmiot \\ Arkusz zadań <arkusz>}}
-\author{\huge{Piotr Krzysztof Lis}}
+\title{\Huge{<nTeX>[title]}}
+\author{\huge{<nTeX>[name]}}
 \date{\today}
 
 \begin{document}
 
 \maketitle
-\newpage
 \pdfbookmark[section]{\contentsname}{toc}
-
-\renewcommand*\contentsname{Spis zadań}
-\renewcommand{\figurename}{Ryc.}
 \tableofcontents
-
 \pagebreak
-\chapter{Sekcja}
+
+
+\problem{Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.}
+
+\solution Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.}
 
 \end{document}
