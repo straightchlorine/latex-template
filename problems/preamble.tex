@@ -11,6 +11,8 @@
 \usepackage{multicol}
 \usepackage{import}
 \usepackage{pdfpages}
+\usepackage{titletoc}
+\usepackage{lmodern}
 
 % math imports
 \usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
@@ -22,7 +24,6 @@
 % tikz imports
 \usepackage{tikz-cd}
 \usepackage{tikz}
-\usepackage{titletoc}
 \usepackage{scalerel}
 \usepackage{pict2e}
 \usepackage{tkz-euclide}
@@ -127,12 +128,12 @@
   separator sign none,
   segmentation style={solid, formulaframe},
 }
-{th}
+{formula}
 
-\newcommand{\formula}[1]
+\newcommand{\formula}[2]
 {%
-  \begin{Formula}{}{}
-    #1
+  \begin{Formula}{#1}{}
+    #2
   \end{Formula}
 }%
 
