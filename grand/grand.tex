@@ -1,0 +1,27 @@
+\documentclass[12pt, a4paper, openany]{book}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{<nTeX>[title]}}
+\author{\huge{<nTeX>[name]}}
+\affil{<nTeX>[afilliation]}
+\date{\today}
+
+\bibliography{bibliography.bib}
+\graphicspath{{./img/}}
+
+\begin{document}
+
+\maketitle
+\newpage
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\newpage
+
+\subfile{chapters/ch1.tex}
+
+\printbibliography%
+
+\end{document}
